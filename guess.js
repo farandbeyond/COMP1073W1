@@ -66,7 +66,7 @@ console.log('hello');
           checkButton.disabled = true;
         }else if(tries == 0){
             checkButton.disabled = true;
-            LowHighResult.textContent = 'YOUR FINAL GUESS WAS INCORRECT.';
+            LowHighResult.textContent = 'YOUR FINAL GUESS WAS INCORRECT. THE NUMBER WAS: ' + price;
         }else{
         // STEP 3f: Conditional - the user's guess is incorrect
         
