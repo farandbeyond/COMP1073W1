@@ -41,15 +41,16 @@ console.log('hello');
 
       // STEP 3: Build a function to check the user's guess
     function checkGuess(){
-        tries--;
-        updateCheckButton();
         // STEP 3a: Create a variable to contain what number the user entered
         var input = inputfield.value;
         inputfield.value = '';
         //console.log(input);
-        if(input = ''){
+        if(input == ''){
             lastGuess.textContent = 'ENTER A VALUE TO GUESS';
         }else{
+            tries--;
+            updateCheckButton();
+
             // STEP 3b: If this is the first guess, add some text to the screen as a label for listing previous guesses for reference
             
             if(failedGuesses.textContent == ''){
