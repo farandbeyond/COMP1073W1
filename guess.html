@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>COMP1073 Client-Side JavaScript</title>
+    <link rel="stylesheet" href="guess.css" />
+  </head>
+
+  <body>
+    <h1>Number Guessing Game</h1>
+    <p>I have picked a random number between 1 and 100. You have 10 chances to guess the number.</p>
+
+    <!-- Guessing form controls -->
+    <label for="guessField">Enter a guess: </label>
+    <input type="number" id="guessField">
+    <button id="submit">Submit guess</button>
+    <button id="reset">Reset Game</button>
+
+    <!-- Elements to contain feedback for user -->
+    <section>
+      <p id="guesses"></p>
+      <p id="lastResult"></p>
+      <p id="lowOrHi"></p>
+    </section>
+
+    <script src="guess.js"></script>
+  </body>
+</html>
