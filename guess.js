@@ -46,40 +46,44 @@ console.log('hello');
         // STEP 3a: Create a variable to contain what number the user entered
         var input = inputfield.value;
         inputfield.value = '';
-        console.log(input);
-        // STEP 3b: If this is the first guess, add some text to the screen as a label for listing previous guesses for reference
-        
-        if(failedGuesses.textContent == ''){
-            failedGuesses.textContent = 'Your Guesses: ';
+        //console.log(input);
+        if(input = ''){
+            lastGuess.textContent = 'ENTER A VALUE TO GUESS';
         }else{
-            failedGuesses.textContent += memory;
-        }
-
-        // STEP 3c: Add the user's current guess to that list, plus a space
-        memory = input;
-        lastGuess.textContent = "Your Guess: " + input;
-        
-        // STEP 3d: Conditional - the user guessed correctly
-        if(input == price){
-          // Output a success message, then end the game
-          LowHighResult.textContent = 'YOUR GUESS IS: CORRECT';
-          checkButton.disabled = true;
-        }else if(tries == 0){
-            checkButton.disabled = true;
-            LowHighResult.textContent = 'YOUR FINAL GUESS WAS INCORRECT. THE NUMBER WAS: ' + price;
-        }else{
-        // STEP 3f: Conditional - the user's guess is incorrect
-        
-            // Output an appropriate message
+            // STEP 3b: If this is the first guess, add some text to the screen as a label for listing previous guesses for reference
             
-            if(input < price){
-                // If the guess is too low, let the user know
-                LowHighResult.textContent = 'YOUR GUESS IS: LOW';
-                memory += '(L), ';
+            if(failedGuesses.textContent == ''){
+                failedGuesses.textContent = 'Your Guesses: ';
             }else{
-                // Else if the guess is too high, let the user know
-                LowHighResult.textContent = 'YOUR GUESS IS: HIGH';
-                memory += '(H), ';
+                failedGuesses.textContent += memory;
+            }
+
+            // STEP 3c: Add the user's current guess to that list, plus a space
+            memory = input;
+            lastGuess.textContent = "Your Guess: " + input;
+            
+            // STEP 3d: Conditional - the user guessed correctly
+            if(input == price){
+            // Output a success message, then end the game
+            LowHighResult.textContent = 'YOUR GUESS IS: CORRECT';
+            checkButton.disabled = true;
+            }else if(tries == 0){
+                checkButton.disabled = true;
+                LowHighResult.textContent = 'YOUR FINAL GUESS WAS INCORRECT. THE NUMBER WAS: ' + price;
+            }else{
+            // STEP 3f: Conditional - the user's guess is incorrect
+            
+                // Output an appropriate message
+                
+                if(input < price){
+                    // If the guess is too low, let the user know
+                    LowHighResult.textContent = 'YOUR GUESS IS: LOW';
+                    memory += '(L), ';
+                }else{
+                    // Else if the guess is too high, let the user know
+                    LowHighResult.textContent = 'YOUR GUESS IS: HIGH';
+                    memory += '(H), ';
+                }
             }
         }
     }
